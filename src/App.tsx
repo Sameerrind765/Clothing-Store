@@ -32,7 +32,6 @@ function App() {
           } />
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
-          <Route path="/test" element={<TestSanity />} />
         </Routes>
         <Footer />
       </CartProvider>
