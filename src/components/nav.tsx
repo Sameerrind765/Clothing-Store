@@ -1,8 +1,8 @@
 import "../index.css";
 import "./nav.css";
-import hamburger from "../assets/Hamburger-icon.svg";
+import hamburger from "../assets/hamburger-icon.svg";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 
 function Nav() {
@@ -10,15 +10,16 @@ function Nav() {
   const [showSearch, setShowSearch] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const { cartItems } = useCart();
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setIsMenuOpen(prev => !prev);
   };
 
-  const handleSearch = (e: { preventDefault: () => void; }) => {
+  const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
-    // Example: navigate to /product?search=searchTerm
-    window.location.href = `/product?search=${encodeURIComponent(searchTerm)}`;
+    navigate(`/product?search=${encodeURIComponent(searchTerm)}`);
+    setShowSearch(false); // Close the overlay after search
   };
 
   return (
@@ -86,23 +87,27 @@ function Nav() {
         </ul>
 
       {showSearch && (
-        <div className="w-screen h-screen fixed backdrop-brightness-50 justify-center top-0 left-0  z-20 flex pt-16">
-        <form
-          onSubmit={handleSearch}
-          className="nav-search-form"
+        <div
+          className="w-screen h-screen fixed backdrop-brightness-50 justify-center top-0 left-0 z-20 flex pt-16"
+          onClick={() => setShowSearch(false)}
         >
-          <input
-            type="text"
-            placeholder="Search products..."
-            value={searchTerm}
-            onChange={e => setSearchTerm(e.target.value)}
-            autoFocus
-          />
-          <button type="submit">
-            <img src="/src/assets/Search-icon-2.svg" alt="search-icon" />
-          </button>
-        </form>
-            </div>
+          <form
+            onSubmit={handleSearch}
+            className="nav-search-form"
+            onClick={e => e.stopPropagation()} // Prevent overlay close when clicking inside form
+          >
+            <input
+              type="text"
+              placeholder="Search products..."
+              value={searchTerm}
+              onChange={e => setSearchTerm(e.target.value)}
+              autoFocus
+            />
+            <button type="submit">
+              <img src="/src/assets/Search-icon-2.svg" alt="search-icon" />
+            </button>
+          </form>
+        </div>
       )}
       </nav>
     </header>

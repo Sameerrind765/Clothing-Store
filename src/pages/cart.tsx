@@ -2,15 +2,15 @@ import { useCart } from "../context/CartContext";
 import UseNavigate from "../utils/navigate";
 
 const Cart = () => {
-    const { cartItems } = useCart();
+    const { cartItems, incrementItem, decrementItem, removeItem } = useCart(); // Make sure these are provided by your context
     const navigate = UseNavigate();
 
     const subtotal = cartItems.reduce((sum, item) => sum + item.totalPrice, 0);
 
     return (
         <>
-            <div className="headline bg-black text-white text-center p-1 h-3.5"></div>
-            <div className="cart-head mt-10 mb-10">
+            <div className="headline bg-black text-white text-center p-1 h-3.5 "></div>
+            <div className="cart-head mt-10 mb-10 min-h-screen flex flex-col">
                 <h1 className="cart-h1">My Cart</h1>
                 <div className="cart flex flex-col container gap-10">
                     <div className="cart-head flex">
@@ -33,9 +33,23 @@ const Cart = () => {
                                 <div className="quantity flex justify-between">
                                     <p>Quantity</p>
                                     <div className="flex items-center gap-2">
-                                        <button className="border border-black rounded-full w-8 h-8 flex items-center justify-center">-</button>
+                                        <button
+                                            className="border border-black rounded-full w-8 h-8 flex items-center justify-center"
+                                            onClick={() => {
+                                                if (item.quantity === 1) {
+                                                    if (window.confirm("Remove this item from cart?")) {
+                                                        removeItem(item.id, item.size, item.color);
+                                                    }
+                                                } else {
+                                                    decrementItem(item.id, item.size, item.color);
+                                                }
+                                            }}
+                                        >-</button>
                                         <p>{item.quantity}</p>
-                                        <button className="border border-black rounded-full w-8 h-8 flex items-center justify-center">+</button>
+                                        <button
+                                            className="border border-black rounded-full w-8 h-8 flex items-center justify-center"
+                                            onClick={() => incrementItem(item.id, item.size, item.color)}
+                                        >+</button>
                                     </div>
                                 </div>
                                 <div className="flex justify-end">
@@ -44,27 +58,29 @@ const Cart = () => {
                             </div>
                         ))
                     )}
-                    <div className="flex flex-col order-summary">
-                        <h2 className="border-b-black border-b-[1px]">Order Summary</h2>
-                        <div className="summary-item flex flex-col gap-3">
-                            <div className="border-b-gray-600 wrapper flex justify-between border-b-[1px]">
-                                <p>Subtotal</p>
-                                <p>Rs. {subtotal.toLocaleString()}</p>
+                    {cartItems.length > 0 && (
+                        <div className="flex flex-col order-summary">
+                            <h2 className="border-b-black border-b-[1px]">Order Summary</h2>
+                            <div className="summary-item flex flex-col gap-3">
+                                <div className="border-b-gray-600 wrapper flex justify-between border-b-[1px]">
+                                    <p>Subtotal</p>
+                                    <p>Rs. {subtotal.toLocaleString()}</p>
+                                </div>
+                                <div className="border-b-gray-600 wrapper flex justify-between border-b-[1px]">
+                                    <p>Discount</p>
+                                    <p>Rs. 0</p>
+                                </div>
+                                <div className="border-b-gray-600 wrapper flex justify-between border-b-[1px]">
+                                    <p>Total</p>
+                                    <p>Rs. {subtotal.toLocaleString()}</p>
+                                </div>
+                                <button className="cart-btn" onClick={() => navigate("/checkout")}>
+                                    Proceed To Checkout
+                                </button>
+                                <button className="cart-btn-2">Continue Shopping</button>
                             </div>
-                            <div className="border-b-gray-600 wrapper flex justify-between border-b-[1px]">
-                                <p>Discount</p>
-                                <p>Rs. 0</p>
-                            </div>
-                            <div className="border-b-gray-600 wrapper flex justify-between border-b-[1px]">
-                                <p>Total</p>
-                                <p>Rs. {subtotal.toLocaleString()}</p>
-                            </div>
-                            <button className="cart-btn" onClick={() => {
-                                navigate("/checkout")
-                            }}>Proceed To Checkout</button>
-                            <button className="cart-btn-2">Continue Shopping</button>
                         </div>
-                    </div>
+                    )}
                 </div>
             </div>
         </>

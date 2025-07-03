@@ -20,7 +20,7 @@ function Card({ id, name, price, alt, colors, image }: Product) {
                 <p>Rs. {price}</p>
                 <div className=" justify-center gap-1.5 flex">
                     {colors.map((color, idx) => (
-                        <div key={idx} className={`color-box size-5 border-[0.1px] bg-${color}`}></div>
+                        <div key={idx} className={`color-box size-5 border-[0.1px]`} style={{ backgroundColor: color }}></div>
                     ))}
                 </div>
             </div>

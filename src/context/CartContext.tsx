@@ -6,6 +6,9 @@ interface CartContextType {
   cartItems: CartItem[];
   addToCart: (item: CartItem) => void;
   removeFromCart: (id: number) => void;
+  incrementItem: (id: number, size: string, color: string) => void;
+  decrementItem: (id: number, size: string, color: string) => void;
+  removeItem: (id: number, size: string, color: string) => void;
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -52,8 +55,60 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     setCartItems((prev) => prev.filter((item) => item.id !== id));
   };
 
+  const incrementItem = (id: number, size: string, color: string) => {
+    setCartItems((items) =>
+      items.map((item) =>
+        item.id === id && item.size === size && item.color === color
+          ? {
+              ...item,
+              quantity: item.quantity + 1,
+              totalPrice: (item.quantity + 1) * item.price,
+            }
+          : item
+      )
+    );
+  };
+
+  const decrementItem = (id: number, size: string, color: string) => {
+    setCartItems((items) =>
+      items.flatMap((item) => {
+        if (item.id === id && item.size === size && item.color === color) {
+          if (item.quantity === 1) {
+            // Remove item
+            return [];
+          }
+          return [
+            {
+              ...item,
+              quantity: item.quantity - 1,
+              totalPrice: (item.quantity - 1) * item.price,
+            },
+          ];
+        }
+        return [item];
+      })
+    );
+  };
+
+  const removeItem = (id: number, size: string, color: string) => {
+    setCartItems((items) =>
+      items.filter(
+        (item) => !(item.id === id && item.size === size && item.color === color)
+      )
+    );
+  };
+
   return (
-    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart }}>
+    <CartContext.Provider
+      value={{
+        cartItems,
+        addToCart,
+        removeFromCart,
+        incrementItem,
+        decrementItem,
+        removeItem,
+      }}
+    >
       {children}
     </CartContext.Provider>
   );

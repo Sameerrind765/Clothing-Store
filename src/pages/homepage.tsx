@@ -1,9 +1,9 @@
 import "./style.css";
-import UseNavigation from "../utils/navigate.js";
+import useNavigation from "../utils/navigate";
 import Products from "./products.js";
 
 function Home() {
-    const navigate = UseNavigation();
+    const navigate = useNavigation();
     return (
         <>
             <main>
@@ -13,8 +13,8 @@ function Home() {
                         <p className="z-10">SPRING SUMMER</p>
                         <h1 className="text-3xl  font-bold z-10">TELL ME MORE</h1>
                         <div className="cta flex gap-2 z-10">
-                            <button className="bg-white text-black z-10" onClick={() => navigate("/product")}>SHOP MEN</button>
-                            <button className="bg-white text-black z-10" onClick={() => navigate("/product")}>SHOP WOMEN</button>
+                            <button className="bg-white text-black z-10" onClick={() => navigate("/product?gender=men")}>SHOP MEN</button>
+                            <button className="bg-white text-black z-10" onClick={() => navigate("/product?gender=women")}>SHOP WOMEN</button>
                         </div>
                     </div>
                 </div>
@@ -39,9 +39,6 @@ function Home() {
                 </div>
                 
                     <Products start={5} end={9} />
-
-
-
             </main>
         </>
     );
