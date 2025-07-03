@@ -1,22 +1,41 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from './pages/homepage'
-import ProductPage from './pages/product'
+import { CartProvider } from "./context/CartContext";
+import ProductPage from './pages/productpage'
 import Nav from './components/nav'
 import Footer from './components/footer'
-import ProductCard from "./pages/productcard";
+import ProductDetail from "./pages/productdetail";
+import Products from "./pages/products";
+import Cart from "./pages/cart";
+import TestSanity from "./pages/testSanity";
+import ScrollToTop from "./utils/scrollToTop";
 import './App.css'
 import "./index.css"
+import Checkout from "./pages/checkout";
 
 function App() {
   return (
     <BrowserRouter>
-      <Nav />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/product" element={<ProductPage />} />
-        <Route path="/product/card" element={<ProductCard />} />
-      </Routes>
-      <Footer />
+      <CartProvider>
+        <ScrollToTop />
+        <Nav />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/test" element={<TestSanity />} />
+          <Route path="/product" element={<ProductPage />} />
+          <Route path="/product/:id" element={
+            <>
+              <ScrollToTop behave="smooth" />
+              <ProductDetail />
+              <Products />
+            </>
+          } />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/test" element={<TestSanity />} />
+        </Routes>
+        <Footer />
+      </CartProvider>
     </BrowserRouter>
   );
 }

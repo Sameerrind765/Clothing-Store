@@ -1,0 +1,239 @@
+[
+  {
+    "id": 1,
+    "name": "CUTWORK POPLIN DRESS 1",
+    "code":"MAS24TP005-SML-BRN",
+    "price": 9950,
+    "image": [
+      "/products/product1.jpg",
+      "/products/product2.jpg",
+      "/products/product3.jpg",
+      "/products/product4.jpg"
+    ],
+    "alt": "Man wearing striped black short sleeve shirt and black pants",
+    "colors": ["gray", "black", "brown"],
+    "size": ["XS","S", "M", "L", "XL"],
+    "gender": "men",
+    "category": "shirts",
+    "subCategory":"Polo",
+    "description": "A stylish cutwork poplin dress perfect for casual outings or formal events. Made from high-quality fabric, it offers comfort and elegance."
+    
+  },
+  {
+    "id": 2,
+    "name": "CUTWORK POPLIN DRESS 2",
+    "price": 9950,
+    "code":"MAS24TP005-SML-BRN",
+    "image": [
+      "/products/product2.jpg",
+      "/products/product1.jpg",
+      "/products/product3.jpg",
+      "/products/product4.jpg"
+    ],
+    "alt": "Short sleeve brown shirt displayed flat",
+    "colors": ["orange", "blue", "brown"],
+    "size": ["XS","S", "M", "L", "XL"],
+    "gender": "men",
+    "category": "shirts",
+    "subCategory":"Polo",
+    "description": "A stylish cutwork poplin dress perfect for casual outings or formal events. Made from high-quality fabric, it offers comfort and elegance."
+  },
+  {
+    "id": 3,
+    "name": "CUTWORK POPLIN DRESS 3",
+    "code":"MAS24TP005-SML-BRN",
+    "price": 9950,
+    "image": [
+      "/public/products/product3.jpg",
+      "/public/products/product1.jpg",
+      "/public/products/product2.jpg",
+      "/public/products/product3.jpg"
+    ],
+    "alt": "Man in navy blue suit with brown undershirt",
+    "colors": ["blue", "brown"],
+    "size": ["XS","S", "M", "L", "XL"],
+    "gender": "men",
+    "category": "shirts",
+    "subCategory":"Polo",
+    "description": "A stylish cutwork poplin dress perfect for casual outings or formal events. Made from high-quality fabric, it offers comfort and elegance."
+  },
+  {
+    "id": 4,
+    "name": "CUTWORK POPLIN DRESS 4",
+    "code":"MAS24TP005-SML-BRN",
+    "price": 9950,
+    "image": [
+      "/public/products/product4.jpg",
+      "/public/products/product1.jpg",
+      "/public/products/product2.jpg",
+      "/public/products/product4.jpg"
+    ],
+    "alt": "Black sandals with beige pants close-up",
+    "colors": ["brown", "black"],
+    "size": ["XS","S", "M", "L", "XL"],
+    "gender": "men",
+    "category": "shirts",
+    "subCategory":"Polo",
+    "description": "A stylish cutwork poplin dress perfect for casual outings or formal events. Made from high-quality fabric, it offers comfort and elegance."
+  },
+  {
+    "id": 5,
+    "name": "CUTWORK POPLIN DRESS 5",
+    "code":"MAS24TP005-SML-BRN",
+    "price": 9950,
+    "image": [
+      "/public/products/product5.jpg",
+      "/public/products/product1.jpg",
+      "/public/products/product2.jpg",
+      "/public/products/product5.jpg"
+    ],
+    "alt": "Beige knit t-shirt with tan pants",
+    "size": ["XS","S", "M", "L", "XL"],
+    "colors": ["brown", "gray"],
+    "gender": "men",
+    "category": "shirts",
+    "subCategory":"Polo",
+    "description": "A stylish cutwork poplin dress perfect for casual outings or formal events. Made from high-quality fabric, it offers comfort and elegance."
+  },
+  {
+    "id": 6,
+    "name": "CUTWORK POPLIN DRESS 6",
+    "code":"MAS24TP005-SML-BRN",
+    "price": 9950,
+    "image": [
+      "/public/products/product6.jpg",
+      "/public/products/product1.jpg",
+      "/public/products/product2.jpg",
+      "/public/products/product6.jpg"
+    ],
+    "alt": "Striped t-shirt with black trousers and white shoes",
+    "colors": ["blue", "black"],
+    "size": ["XS","S", "M", "L"]
+  },
+  {
+    "id": 7,
+    "name": "CUTWORK POPLIN DRESS",
+    "code":"MAS24TP005-SML-BRN",
+    "price": 9950,
+    "image": [
+      "/public/products/product7.jpg",
+      "/public/products/product1.jpg",
+      "/public/products/product2.jpg",
+      "/public/products/product7.jpg"
+    ],
+    "alt": "Charcoal washed t-shirt with sandals",
+    "colors": ["black"]
+  },
+  {
+    "id": 8,
+    "name": "CUTWORK POPLIN DRESS",
+    "code":"MAS24TP005-SML-BRN",
+    "price": 9950,
+    "image": [
+      "/public/products/product8.jpg",
+      "/public/products/product1.jpg",
+      "/public/products/product2.jpg",
+      "/public/products/product8.jpg"
+    ],
+    "alt": "Man in blue striped shirt with beige pants",
+    "colors": ["brown", "gray"]
+  },
+  {
+    "id": 9,
+    "name": "CUTWORK POPLIN DRESS",
+    "code":"MAS24TP005-SML-BRN",
+    "price": 9950,
+    "image": [
+      "/public/products/product9.jpg",
+      "/public/products/product1.jpg",
+      "/public/products/product2.jpg",
+      "/public/products/product9.jpg"
+    ],
+    "alt": "Mustard polo with navy trousers",
+    "colors": ["brown"]
+  },
+  {
+    "id": 10,
+    "name": "CUTWORK POPLIN DRESS",
+    "code":"MAS24TP005-SML-BRN",
+    "price": 9950,
+    "image": [
+      "/public/products/product10.jpg",
+      "/public/products/product1.jpg",
+      "/public/products/product2.jpg",
+      "/public/products/product10.jpg"
+    ],
+    "alt": "Navy cargo pants and black sneakers",
+    "colors": ["black", "blue"]
+  },
+  {
+    "id": 11,
+    "name": "CUTWORK POPLIN DRESS",
+    "code":"MAS24TP005-SML-BRN",
+    "price": 9950,
+    "image": [
+      "/public/products/product11.jpg",
+      "/public/products/product1.jpg",
+      "/public/products/product2.jpg",
+      "/public/products/product11.jpg"
+    ],
+    "alt": "Cream short sleeve shirt with light trousers",
+    "colors": ["black", "nude"]
+  },
+  {
+    "id": 12,
+    "name": "CUTWORK POPLIN DRESS",
+    "code":"MAS24TP005-SML-BRN",
+    "price": 9950,
+    "image": [
+      "/public/products/product12.jpg",
+      "/public/products/product1.jpg",
+      "/public/products/product2.jpg",
+      "/public/products/product12.jpg"
+    ],
+    "alt": "Black leather sandals with black pants",
+    "colors": ["black", "brown"]
+  },
+  {
+    "id": 13,
+    "name": "CUTWORK POPLIN DRESS",
+    "code":"MAS24TP005-SML-BRN",
+    "price": 9950,
+    "image": [
+      "/public/products/product2.jpg",
+      "/public/products/product5.jpg",
+      "/public/products/product3.jpg",
+      "/public/products/product6.jpg"
+    ],
+    "alt": "Model in casual brown outfit",
+    "colors": ["brown", "gray"]
+  },
+  {
+    "id": 14,
+    "name": "CUTWORK POPLIN DRESS",
+    "code":"MAS24TP005-SML-BRN",
+    "price": 9950,
+    "image": [
+      "/public/products/product4.jpg",
+      "/public/products/product7.jpg",
+      "/public/products/product8.jpg",
+      "/public/products/product9.jpg"
+    ],
+    "alt": "Urban style black outfit",
+    "colors": ["black", "blue"]
+  },
+  {
+    "id": 15,
+    "name": "CUTWORK POPLIN DRESS",
+    "code":"MAS24TP005-SML-BRN",
+    "price": 9950,
+    "image": [
+      "/public/products/product10.jpg",
+      "/public/products/product12.jpg",
+      "/public/products/product11.jpg",
+      "/public/products/product3.jpg"
+    ],
+    "alt": "Modern fashion close-up pose",
+    "colors": ["gray", "brown"]
+  }
+]

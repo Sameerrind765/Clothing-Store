@@ -1,9 +1,8 @@
-nav {
-    width: 89%;
-    margin: auto;
-    height: 67px;
+#hamburger-btn {
+  all: unset;
 }
-.hamburger {
-    width: 24px;
-    height: 16px;
+
+.hamburger-button img {
+  width: 24px;
+  height: 16px;
 }

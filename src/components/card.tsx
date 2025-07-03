@@ -1,21 +1,31 @@
-interface ImageProps {
-  imageSrc: string;
-  altText: string;
+import { useNavigate } from "react-router-dom";
+
+interface Product {
+    id: number  ;
+    name: string;
+    price: number;
+    alt: string;
+    colors: string[];
+    image: string;
 }
 
-function Card({imageSrc,altText }: ImageProps) {
+function Card({ id, name, price, alt, colors, image }: Product) {
+    const navigate = useNavigate();
+
     return (
-        <div className="most-Selling card flex  items-center  flex-col">
-                        <img src={imageSrc} className='w-fit' alt={altText} />
-                        <div className="desc flex flex-col  items-center  w-fit">
-                            <h2 className="didact-gothic">CUTWORK POPLIN DRESS</h2>
-                            <p>Rs. 9950.00</p>
-                            <div className="container justify-center gap-1.5 flex">
-                                <div className="color-box size-5 bg-gray-500"></div>
-                                <div className="color-box size-5 bg-black"></div>
-                            </div>
-                        </div>
-                    </div>
-    )
+        <div key={id} className="pb-10 card flex items-center flex-col" onClick={() => navigate("/product/" + id)}>
+            <img src={image} className='w-fit' alt={alt} />
+            <div className="desc flex flex-col items-center md:w-fit">
+                <h2 className="didact-gothic">{name}</h2>
+                <p>Rs. {price}</p>
+                <div className=" justify-center gap-1.5 flex">
+                    {colors.map((color, idx) => (
+                        <div key={idx} className={`color-box size-5 border-[0.1px] bg-${color}`}></div>
+                    ))}
+                </div>
+            </div>
+        </div>
+    );
 }
+
 export default Card;
