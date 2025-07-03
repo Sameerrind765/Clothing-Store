@@ -1,9 +1,11 @@
 import "../index.css";
 import "./nav.css";
 import hamburger from "../assets/hamburger-icon.svg";
+import searchIcon from "../assets/Search-icon.svg";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useCart } from "../context/CartContext";
+import cartIcon from "../assets/Cart-icon.svg";
 
 function Nav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -60,12 +62,12 @@ function Nav() {
             aria-label="Search"
             type="button"
           >
-            <img className="" src="/src/assets/Search-icon.svg" alt="search-icon" />
+            <img className="" src={searchIcon} alt="search-icon" />
           </button>
-          <img className="icon hidden md:block" src="/src/assets/User-icon.svg" alt="user-icon" />
-          <img className="icon hidden sm:block" src="/src/assets/Fvrt-icon.svg" alt="favorite-icon" />
+          <img className="icon hidden md:block" src="/assets/User-icon.svg" alt="user-icon" />
+          <img className="icon hidden sm:block" src="/assets/Fvrt-icon.svg" alt="favorite-icon" />
           <Link to="/cart" className="relative">
-            <img className="icon" src="/src/assets/Cart-icon.svg" alt="cart-icon" />
+            <img className="icon" src={cartIcon} alt="cart-icon" />
             {cartItems.length > 0 && (
               <span
                 className="absolute bg-red-600 text-white text-xs rounded-full flex items-center justify-center"
